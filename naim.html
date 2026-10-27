@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>বিপদে পাশে আছি – অনলাইন ফার্মেসি</title>
+<style>
+:root{--bg:#f3f4f6;--card:#fff;--text:#1d2129;--muted:#6b7280;--brand:#f85606;--on:#fff;--line:#e5e7eb;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1013;--card:#1a1d23;--text:#eef0f4;--muted:#a0a7b4;--brand:#ff7a3d;--on:#1a0a02;--line:#2a2e36;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1013;--card:#1a1d23;--text:#eef0f4;--muted:#a0a7b4;--brand:#ff7a3d;--on:#1a0a02;--line:#2a2e36;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Noto Sans Bengali",system-ui,sans-serif;line-height:1.5;padding-bottom:calc(70px + env(safe-area-inset-bottom,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--brand);z-index:30}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--brand);padding:10px 12px}
+.logo{color:var(--on);font-weight:800;font-size:17px;margin-bottom:8px}
+.sb{display:flex;gap:8px}
+.sb input{flex:1;padding:10px 14px;border:0;border-radius:8px;font:inherit;background:var(--card);color:var(--text)}
+.sb button{border:0;border-radius:8px;background:var(--card);padding:0 12px;font-size:20px;position:relative}
+.badge{position:absolute;top:-6px;right:-4px;background:#c1272d;color:#fff;font-size:11px;border-radius:999px;padding:0 6px}
+main{max-width:900px;margin:auto;padding:10px}
+.banner{background:linear-gradient(120deg,#f85606,#ff9a3c);color:#fff;border-radius:12px;padding:18px;margin-bottom:10px}
+.banner h1{margin:0 0 4px;font-size:21px}
+.banner p{margin:0 0 10px;font-size:14px}
+.btn{display:inline-block;padding:8px 16px;border-radius:999px;background:#fff;color:#f85606;text-decoration:none;font-weight:700;margin-right:6px;border:0;font:inherit;font-weight:700}
+.box{background:var(--card);border-radius:12px;padding:12px;margin-bottom:10px}
+.box h2{margin:0 0 10px;font-size:16px}
+.cats{display:flex;gap:12px;overflow-x:auto}
+.cat{flex:none;width:68px;text-align:center;border:0;background:none;color:var(--text);font:inherit;font-size:12px;padding:0}
+.cat i{display:flex;width:52px;height:52px;margin:0 auto 4px;border-radius:50%;background:var(--bg);align-items:center;justify-content:center;font-style:normal;font-size:24px;border:2px solid transparent}
+.cat.on i{border-color:var(--brand)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(min-width:600px){.grid{grid-template-columns:repeat(4,1fr)}}
+.pc{background:var(--card);border-radius:10px;overflow:hidden;cursor:pointer}
+.ph{display:flex;justify-content:center;padding:8px}
+.ph svg{width:100%;max-width:130px;height:90px}
+.pi{padding:8px 10px 10px}
+.pn{font-size:14px;font-weight:700;line-height:1.3}
+.co{font-size:12px;color:var(--muted)}
+.rx{font-size:11px;color:#c1272d}
+.row{display:flex;justify-content:space-between;align-items:center;margin-top:6px;gap:4px}
+.price{font-weight:800;color:var(--brand);font-size:16px}
+.add{border:0;background:var(--brand);color:var(--on);padding:6px 10px;border-radius:6px;font:inherit;font-size:13px;font-weight:700}
+.qty{display:flex;align-items:center;gap:8px}
+.qty button{width:28px;height:28px;border-radius:6px;border:1px solid var(--brand);background:transparent;color:var(--brand);font-size:17px;line-height:1}
+details{background:var(--bg);border-radius:8px;padding:10px 12px;margin-top:8px}
+summary{font-weight:700}
+input.f{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--text);font:inherit;margin-bottom:8px}
+nav{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;background:var(--card);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+nav button{flex:1;border:0;background:none;color:var(--muted);font:inherit;font-size:12px;padding:8px 0;position:relative}
+nav button span{display:block;font-size:20px}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:40;display:none}
+.ov.on{display:block}
+.sheet{position:fixed;left:0;right:0;bottom:0;max-height:88%;overflow:auto;background:var(--card);border-radius:18px 18px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px));transform:translateY(105%);transition:transform .25s;z-index:50}
+.sheet.on{transform:none}
+.sh{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.item{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--line);gap:8px}
+.total{display:flex;justify-content:space-between;font-weight:800;font-size:18px;margin:12px 0}
+.full{display:block;width:100%;text-align:center;padding:12px;border-radius:8px;background:var(--brand);color:var(--on);border:0;font:inherit;font-weight:700;text-decoration:none;margin-top:6px}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:10px}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">💊 বিপদে পাশে আছি</div>
+<div class="sb"><input id="q" placeholder="ওষুধ বা কোম্পানি খুঁজুন…"><button id="hc">🛒<span class="badge" id="cnt">০</span></button></div>
+</header>
+
+<main>
+<div class="banner">
+<h1>সব ধরনের ওষুধ এক জায়গায়</h1>
+<p>পছন্দ করুন, কার্টে দিন, WhatsApp-এ অর্ডার করুন।</p>
+<a class="btn" href="tel:+8801915200331">📞 কল</a><a class="btn" href="https://wa.me/8801915200331">WhatsApp</a>
+</div>
+
+<div class="box" id="cats"><h2>ক্যাটাগরি</h2><div class="cats" id="catrow"></div></div>
+
+<div class="box"><h2 id="ttl">সব পণ্য</h2><div class="grid" id="list"></div>
+<p class="co" style="margin:10px 0 0">দাম নমুনা। প্রেসক্রিপশনের ওষুধ ডাক্তারের পরামর্শ অনুযায়ী নিন।</p></div>
+
+<div class="box" id="help"><h2>হেল্প সেন্টার</h2>
+<p class="co" style="margin:0">ফোন ও WhatsApp: ০১৯১৫২০০৩৩১</p>
+<a class="full" href="tel:+8801915200331">📞 কল করুন</a>
+<a class="full" style="background:#25a244;color:#fff" href="https://wa.me/8801915200331">💬 WhatsApp মেসেজ</a>
+<details><summary>কীভাবে অর্ডার করব?</summary><p>পণ্য কার্টে দিন, কার্ট খুলে নাম, মোবাইল নম্বর ও ঠিকানা দিয়ে WhatsApp-এ অর্ডার চাপুন।</p></details>
+<details><summary>ওষুধ না পেলে?</summary><p>WhatsApp-এ নাম বা প্রেসক্রিপশনের ছবি পাঠান।</p></details>
+<details><summary>ডেলিভারি কীভাবে?</summary><p>অর্ডারের পর ফোনে বা WhatsApp-এ সময় ও খরচ জানানো হবে।</p></details>
+<details><summary>জরুরি দরকারে?</summary><p>সরাসরি কল করুন। গুরুতর অসুস্থতায় নিকটস্থ হাসপাতালে যান।</p></details>
+</div>
+<footer>© বিপদে পাশে আছি</footer>
+</main>
+
+<nav>
+<button data-go="top"><span>🏠</span>হোম</button>
+<button data-go="cats"><span>🗂️</span>ক্যাটাগরি</button>
+<button data-go="cart"><span>🛒</span>কার্ট</button>
+<button data-go="help"><span>🎧</span>হেল্প</button>
+</nav>
+
+<div class="ov" id="ov"></div>
+
+<div class="sheet" id="cartSheet">
+<div class="sh"><b style="font-size:18px">আপনার কার্ট</b><button class="add" data-close="1">বন্ধ</button></div>
+<div id="items"></div>
+<div class="total"><span>মোট</span><span id="total">৳০</span></div>
+<input class="f" id="nm" placeholder="আপনার নাম *">
+<input class="f" id="ph" type="tel" placeholder="মোবাইল নম্বর *">
+<input class="f" id="ad" placeholder="সম্পূর্ণ ঠিকানা (এলাকা, থানা, জেলা) *">
+<button class="full" id="order">WhatsApp-এ অর্ডার করুন</button>
+</div>
+
+<div class="sheet" id="detSheet">
+<div class="sh"><b>পণ্যের বিবরণ</b><button class="add" data-close="1">বন্ধ</button></div>
+<div id="det"></div>
+</div>
+
+<script>
+var P=[
+{n:"Napa 500 mg (১০টি)",c:"Beximco",p:30,t:"পেইন কিলার"},
+{n:"Napa Extra (১০টি)",c:"Beximco",p:30,t:"পেইন কিলার"},
+{n:"Ace 500 mg (১০টি)",c:"Square",p:30,t:"পেইন কিলার"},
+{n:"Ace Plus (১০টি)",c:"Square",p:50,t:"পেইন কিলার"},
+{n:"Ibuprofen 400 mg (১০টি)",c:"নমুনা কোম্পানি",p:30,t:"পেইন কিলার"},
+{n:"Seclo 20 mg (১০টি)",c:"Square",p:70,t:"ট্যাবলেট"},
+{n:"Losectil 20 mg (১০টি)",c:"Eskayef",p:70,t:"ট্যাবলেট"},
+{n:"Sergel 20 mg (১০টি)",c:"Healthcare",p:80,t:"ট্যাবলেট"},
+{n:"Fexo 120 mg (১০টি)",c:"Square",p:90,t:"ট্যাবলেট"},
+{n:"Alatrol 10 mg (১০টি)",c:"Square",p:30,t:"ট্যাবলেট"},
+{n:"Vitamin C 500 mg (১০টি)",c:"নমুনা কোম্পানি",p:50,t:"ট্যাবলেট"},
+{n:"Napa Syrup (৬০ মি.লি.)",c:"Beximco",p:35,t:"সিরাপ"},
+{n:"Ace Syrup (১০০ মি.লি.)",c:"Square",p:40,t:"সিরাপ"},
+{n:"Ambrox Syrup (১০০ মি.লি.)",c:"Square",p:70,t:"সিরাপ"},
+{n:"Inj. Diclofenac (৭৫ mg, ১টি)",c:"নমুনা কোম্পানি",p:25,t:"ইনজেকশন",r:1},
+{n:"Inj. Ceftriaxone (১ g, ১টি)",c:"নমুনা কোম্পানি",p:120,t:"ইনজেকশন",r:1},
+{n:"Normal Saline (৫০০ মি.লি.)",c:"নমুনা কোম্পানি",p:70,t:"স্যালাইন"},
+{n:"Dextrose 5% (৫০০ মি.লি.)",c:"নমুনা কোম্পানি",p:70,t:"স্যালাইন"},
+{n:"Orsaline-N (১ প্যাকেট)",c:"Square",p:6,t:"স্যালাইন"},
+{n:"Crepe Bandage (৩ ইঞ্চি)",c:"নমুনা কোম্পানি",p:60,t:"ব্যান্ডেজ"},
+{n:"Band-Aid (১০টি)",c:"নমুনা কোম্পানি",p:20,t:"ব্যান্ডেজ"},
+{n:"Gauze Roll (১টি)",c:"নমুনা কোম্পানি",p:25,t:"ব্যান্ডেজ"},
+{n:"Cotton (১০০ গ্রাম)",c:"নমুনা কোম্পানি",p:50,t:"ব্যান্ডেজ"}
+];
+var CT=[["সব","🏪"],["পেইন কিলার","🤕"],["ট্যাবলেট","💊"],["সিরাপ","🧴"],["ইনজেকশন","💉"],["স্যালাইন","💧"],["ব্যান্ডেজ","🩹"]];
+var cart={},tab="সব",cur=null,bg=["#e3f4f0","#e3edfb","#fdeed9","#f6e3f1"];
+function $(i){return document.getElementById(i)}
+function bn(n){return Number(n).toLocaleString("bn-BD")}
+function ic(x){var cm={Beximco:"#1e6fd9",Square:"#c1272d",Eskayef:"#6a2c91",Healthcare:"#1b8a6b"};var col=cm[x.c]||"#e07a1f";var a=x.n.split(" ("),t=a[0],pk=(a[1]||"").replace(")","");var fs=t.length>14?8:t.length>10?10:12;return "<svg viewBox='0 0 120 84'><rect x='14' y='6' width='92' height='72' rx='8' fill='"+col+"'/><rect x='14' y='6' width='92' height='18' rx='8' fill='rgba(0,0,0,.2)'/><text x='60' y='19' text-anchor='middle' font-size='9' font-weight='700' fill='#fff'>"+x.c+"</text><rect x='22' y='30' width='76' height='30' rx='5' fill='#fff'/><text x='60' y='49' text-anchor='middle' font-size='"+fs+"' font-weight='800' fill='"+col+"'>"+t+"</text><text x='60' y='71' text-anchor='middle' font-size='8' fill='#fff'>"+pk+"</text></svg>"}
+function ctl(i){return cart[i]?'<div class="qty"><button onclick="event.stopPropagation();chg('+i+',-1)">−</button><b>'+bn(cart[i])+'</b><button onclick="event.stopPropagation();chg('+i+',1)">+</button></div>':'<button class="add" onclick="event.stopPropagation();chg('+i+',1)">+ কার্ট</button>'}
+function cats(){var h="";CT.forEach(function(c){h+='<button class="cat'+(c[0]==tab?' on':'')+'" data-c="'+c[0]+'"><i>'+c[1]+'</i>'+c[0]+'</button>'});$("catrow").innerHTML=h}
+function render(){
+ var t=$("q").value.toLowerCase(),h="",n=0;
+ P.forEach(function(x,i){
+  if(t&&(x.n+" "+x.c).toLowerCase().indexOf(t)<0)return;
+  if(tab!="সব"&&x.t!=tab)return;n++;
+  h+='<div class="pc" onclick="det('+i+')"><div class="ph" style="background:'+bg[i%4]+'">'+ic(x)+'</div><div class="pi"><div class="pn">'+x.n+'</div><div class="co">'+x.c+'</div>'+(x.r?'<div class="rx">⚠ প্রেসক্রিপশন লাগবে</div>':'')+'<div class="row"><span class="price">৳'+bn(x.p)+'</span>'+ctl(i)+'</div></div></div>';
+ });
+ $("list").innerHTML=h||"<p class='co'>কিছু পাওয়া যায়নি। WhatsApp-এ জিজ্ঞেস করুন।</p>";
+ $("ttl").textContent=tab+" ("+bn(n)+")";
+}
+function draw(){
+ var h="",tot=0,c=0;
+ Object.keys(cart).forEach(function(i){var x=P[i],q=cart[i];tot+=x.p*q;c+=q;
+  h+='<div class="item"><div><b>'+x.n+'</b><br><span class="co">'+x.c+' · ৳'+bn(x.p)+'</span></div>'+ctl(i)+'</div>'});
+ $("items").innerHTML=h||'<p class="co">কার্ট খালি।</p>';
+ $("total").textContent="৳"+bn(tot);$("cnt").textContent=bn(c);
+}
+function det(i){cur=i;var x=P[i];
+ $("det").innerHTML='<div class="ph" style="background:'+bg[i%4]+';border-radius:12px;padding:14px">'+ic(x)+'</div><h3 style="margin:10px 0 2px">'+x.n+'</h3><div class="co">কোম্পানি: '+x.c+' · '+x.t+'</div>'+(x.r?'<div class="rx">⚠ প্রেসক্রিপশন লাগবে</div>':'')+'<div class="row" style="margin-top:12px"><span class="price" style="font-size:22px">৳'+bn(x.p)+'</span>'+ctl(i)+'</div>';
+ show("detSheet");
+}
+function chg(i,d){cart[i]=(cart[i]||0)+d;if(cart[i]<=0)delete cart[i];render();draw();if(cur!==null&&$("detSheet").classList.contains("on"))det(cur)}
+function show(id){closeAll();$("ov").classList.add("on");$(id).classList.add("on")}
+function closeAll(){$("ov").classList.remove("on");$("cartSheet").classList.remove("on");$("detSheet").classList.remove("on");cur=null}
+$("ov").onclick=closeAll;
+document.querySelectorAll("[data-close]").forEach(function(b){b.onclick=closeAll});
+$("catrow").onclick=function(e){var b=e.target.closest("[data-c]");if(b){tab=b.getAttribute("data-c");cats();render();$("list").scrollIntoView({behavior:"smooth",block:"start"})}};
+$("q").oninput=render;
+$("hc").onclick=function(){show("cartSheet")};
+document.querySelectorAll("nav button").forEach(function(b){b.onclick=function(){
+ var g=b.getAttribute("data-go");
+ if(g=="cart")show("cartSheet");else if(g=="top")window.scrollTo({top:0,behavior:"smooth"});else $(g).scrollIntoView({behavior:"smooth"});
+}});
+$("order").onclick=function(){
+ var k=Object.keys(cart);if(!k.length){alert("আগে কার্টে পণ্য যোগ করুন");return}
+ var nm=$("nm").value.trim(),ph=$("ph").value.trim(),ad=$("ad").value.trim();
+ if(!nm||!ph||!ad){alert("নাম, মোবাইল নম্বর ও ঠিকানা দিন");return}
+ var m="অর্ডার – বিপদে পাশে আছি\n",tot=0;
+ k.forEach(function(i){var x=P[i],q=cart[i];tot+=x.p*q;m+="• "+x.n+" ("+x.c+") × "+q+" = ৳"+x.p*q+"\n"});
+ m+="মোট: ৳"+tot+"\nনাম: "+nm+"\nমোবাইল: "+ph+"\nঠিকানা: "+ad;
+ window.open("https://wa.me/8801915200331?text="+encodeURIComponent(m),"_blank");
+};
+cats();render();draw();
+</script>
+</body>
+</html>
